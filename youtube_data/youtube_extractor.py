@@ -99,5 +99,5 @@ if __name__ == "__main__":
 
     try:
         youtube_search(args)
-    except HttpError, e:
-        print "An HTTP error %d occurred:\n%s" % (e.resp.status, e.content)
+    except HttpError as e:
+        print "An HTTP error {0} occurred:\n{1}".format(e.resp.status, e.content)
