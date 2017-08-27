@@ -26,11 +26,13 @@ STORAGE_PATH_FORMAT = "{0}-oauth2.json"
 # missing.
 MISSING_CLIENT_SECRETS_MESSAGE = "WARNING: Please configure OAuth 2.0"
 
-SEARCH_PART = "id, snippet"
+SEARCH_PART = "id"
+SEARCH_FIELDS = "items(id)"
 SEARCH_ORDER = "viewCount"
 SEARCH_TYPE = "video"
 SEARCH_MAX_RESULTS = 10
-SEARCH_FIELDS = "items(id, snippet(title))"
+VIDEOS_PART = "snippet, status"
+VIDEOS_FIELDS = "items(snippet, status)"
 
 
 class YoutubeExtractor(object):
@@ -61,20 +63,31 @@ class YoutubeExtractor(object):
         search_response = self.service.search().list(
             q=search_term,
             part=SEARCH_PART,
-            #fields=SEARCH_FIELDS,
+            fields=SEARCH_FIELDS,
             maxResults=SEARCH_MAX_RESULTS,
             order=SEARCH_ORDER,
             type=SEARCH_TYPE
         ).execute()
 
-        videos = []
+        search_videos = []
 
         # Add each result to the appropriate list, and then display the list of
         # matching videos.
         for search_result in search_response.get("items", []):
-            if search_result["id"]["kind"] == "youtube#video":
-                videos.append("%s (%s)" % (search_result["snippet"]["title"],
-                                           search_result["id"]["videoId"]))
+            search_videos.append(search_result["id"]["videoId"])
+        video_ids = ",".join(search_videos)
+
+        video_response = self.service.videos().list(
+            id=video_ids,
+            part=VIDEOS_PART,
+            fields=VIDEOS_FIELDS
+        ).execute()
+
+        videos = []
+
+        # Add each result to the list, and then display the list of matching videos.
+        for video_result in video_response.get("items", []):
+            videos.append("%s" % (video_result["snippet"]["title"]))
 
         print "Videos:\n", "\n".join(videos), "\n"
 
