@@ -27,12 +27,14 @@ STORAGE_PATH_FORMAT = "{0}-oauth2.json"
 MISSING_CLIENT_SECRETS_MESSAGE = "WARNING: Please configure OAuth 2.0"
 
 SEARCH_PART = "id"
-SEARCH_FIELDS = "items(id)"
+SEARCH_FIELDS = "items(id(videoId))"
 SEARCH_ORDER = "viewCount"
 SEARCH_TYPE = "video"
 SEARCH_MAX_RESULTS = 10
-VIDEOS_PART = "snippet, status"
-VIDEOS_FIELDS = "items(snippet, status)"
+VIDEOS_PART = "snippet, contentDetails, statistics, topicDetails"
+VIDEOS_FIELDS = "items(snippet(publishedAt, title, description)," \
+                      "contentDetails(duration, contentRating)," \
+                      "statistics(viewCount, likeCount, dislikeCount, commentCount))"
 
 
 class YoutubeExtractor(object):
@@ -62,11 +64,11 @@ class YoutubeExtractor(object):
         # query term.
         search_response = self.service.search().list(
             q=search_term,
+            type=SEARCH_TYPE,
             part=SEARCH_PART,
             fields=SEARCH_FIELDS,
             maxResults=SEARCH_MAX_RESULTS,
-            order=SEARCH_ORDER,
-            type=SEARCH_TYPE
+            order=SEARCH_ORDER
         ).execute()
 
         search_videos = []
@@ -93,7 +95,7 @@ class YoutubeExtractor(object):
 
 if __name__ == "__main__":
 
-    test_search_term = "Tushar Roy"
+    test_search_term = "lady gaga"
 
     try:
         YoutubeExtractor().youtube_search(test_search_term)
