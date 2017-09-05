@@ -1,7 +1,4 @@
-# Sample Python code for user authorization
-
 import httplib2
-import os
 import sys
 
 from apiclient.discovery import build
@@ -9,6 +6,8 @@ from apiclient.errors import HttpError
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
 from oauth2client.tools import argparser, run_flow
+
+from VideoInfo import VideoInfo
 
 # The CLIENT_SECRETS_FILE variable specifies the name of a file that contains
 # the OAuth 2.0 information for this application, including its client_id and
@@ -28,12 +27,12 @@ MISSING_CLIENT_SECRETS_MESSAGE = "WARNING: Please configure OAuth 2.0"
 
 SEARCH_PART = "id"
 SEARCH_FIELDS = "items(id(videoId))"
-SEARCH_ORDER = "viewCount"
+#SEARCH_ORDER = "viewCount"
 SEARCH_TYPE = "video"
-SEARCH_MAX_RESULTS = 10
-VIDEOS_PART = "snippet, contentDetails, statistics, topicDetails"
+SEARCH_MAX_RESULTS = 5
+VIDEOS_PART = "snippet, contentDetails, statistics"
 VIDEOS_FIELDS = "items(snippet(publishedAt, title, description)," \
-                      "contentDetails(duration, contentRating)," \
+                      "contentDetails(duration)," \
                       "statistics(viewCount, likeCount, dislikeCount, commentCount))"
 
 
@@ -59,7 +58,6 @@ class YoutubeExtractor(object):
                      http=credentials.authorize(httplib2.Http()))
 
     def youtube_search(self, search_term):
-
         # Call the search.list method to retrieve results matching the specified
         # query term.
         search_response = self.service.search().list(
@@ -67,8 +65,8 @@ class YoutubeExtractor(object):
             type=SEARCH_TYPE,
             part=SEARCH_PART,
             fields=SEARCH_FIELDS,
-            maxResults=SEARCH_MAX_RESULTS,
-            order=SEARCH_ORDER
+            maxResults=SEARCH_MAX_RESULTS
+            #order=SEARCH_ORDER
         ).execute()
 
         search_videos = []
@@ -79,6 +77,9 @@ class YoutubeExtractor(object):
             search_videos.append(search_result["id"]["videoId"])
         video_ids = ",".join(search_videos)
 
+        return video_ids
+
+    def get_videos_information(self, video_ids):
         video_response = self.service.videos().list(
             id=video_ids,
             part=VIDEOS_PART,
@@ -89,15 +90,36 @@ class YoutubeExtractor(object):
 
         # Add each result to the list, and then display the list of matching videos.
         for video_result in video_response.get("items", []):
-            videos.append("%s" % (video_result["snippet"]["title"]))
+            videos.append(VideoInfo(**video_result))
 
-        print "Videos:\n", "\n".join(videos), "\n"
+        return videos
+
+    def extract_info_on_video(self, search_term):
+        relevant_video_ids = self.youtube_search(search_term)
+
+        return self.get_videos_information(relevant_video_ids)
+
+    def extract_info_on_all_videos(self, videos_records):
+        for vid_name in videos_records:
+            # Extract videos related to this search term
+            videos_records[vid_name] = self.extract_info_on_video(vid_name)
 
 if __name__ == "__main__":
-
-    test_search_term = "lady gaga"
-
+    videos_obj = {"lady gaga bad romance": [],
+                  "LP lost on you": [],
+                  "queen don't stop me now": []
+                  }
     try:
-        YoutubeExtractor().youtube_search(test_search_term)
+        YoutubeExtractor().extract_info_on_all_videos(videos_obj)
+
+        for vid_list in videos_obj.values():
+            for vid in vid_list:
+                print "{0!r} published at {1} with duration of {2}".format(vid.title, vid.publish_date, vid.duration) \
+                    if vid.title is not None and \
+                       vid.publish_date is not None and \
+                       vid.duration is not None \
+                    else "bad result"
+            print "###################"
+
     except HttpError as e:
         print "An HTTP error {0} occurred:\n{1}".format(e.resp.status, e.content)
