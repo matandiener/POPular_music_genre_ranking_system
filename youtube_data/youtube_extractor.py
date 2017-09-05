@@ -1,7 +1,4 @@
-# Sample Python code for user authorization
-
 import httplib2
-import os
 import sys
 
 from apiclient.discovery import build
@@ -9,6 +6,8 @@ from apiclient.errors import HttpError
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
 from oauth2client.tools import argparser, run_flow
+
+from VideoInfo import VideoInfo
 
 # The CLIENT_SECRETS_FILE variable specifies the name of a file that contains
 # the OAuth 2.0 information for this application, including its client_id and
@@ -21,83 +20,106 @@ YOUTUBE_READ_WRITE_SSL_SCOPE = "https://www.googleapis.com/auth/youtube.readonly
 API_SERVICE_NAME = "youtube"
 API_VERSION = "v3"
 
+STORAGE_PATH_FORMAT = "{0}-oauth2.json"
 # This variable defines a message to display if the CLIENT_SECRETS_FILE is
 # missing.
 MISSING_CLIENT_SECRETS_MESSAGE = "WARNING: Please configure OAuth 2.0"
 
-
-# Authorize the request and store authorization credentials.
-def get_authenticated_service(args):
-    flow = flow_from_clientsecrets(CLIENT_SECRETS_FILE, scope=YOUTUBE_READ_WRITE_SSL_SCOPE,
-        message=MISSING_CLIENT_SECRETS_MESSAGE)
-
-    storage = Storage("%s-oauth2.json" % sys.argv[0])
-    credentials = storage.get()
-
-    if credentials is None or credentials.invalid:
-        credentials = run_flow(flow, storage, args)
-
-    # Trusted testers can download this discovery document from the developers page
-    # and it should be in the same directory with the code.
-    return build(API_SERVICE_NAME, API_VERSION,
-        http=credentials.authorize(httplib2.Http()))
-
-# END BOILERPLATE CODE
-
-# Sample python code for channels.list
+SEARCH_PART = "id"
+SEARCH_FIELDS = "items(id(videoId))"
+#SEARCH_ORDER = "viewCount"
+SEARCH_TYPE = "video"
+SEARCH_MAX_RESULTS = 5
+VIDEOS_PART = "snippet, contentDetails, statistics"
+VIDEOS_FIELDS = "items(snippet(publishedAt, title, description)," \
+                      "contentDetails(duration)," \
+                      "statistics(viewCount, likeCount, dislikeCount, commentCount))"
 
 
-def channels_list_by_username(service, **kwargs):
-  results = service.channels().list(
-    **kwargs
-  ).execute()
+class YoutubeExtractor(object):
+    def __init__(self):
+        self.service = YoutubeExtractor.get_authenticated_service()
 
-  print('This channel\'s ID is %s. Its title is %s, and it has %s views.' %
-       (results['items'][0]['id'],
-        results['items'][0]['snippet']['title'],
-        results['items'][0]['statistics']['viewCount']))
-#channels_list_by_username(service, part='snippet,contentDetails,statistics', forUsername='GoogleDevelopers')
+    @staticmethod
+    # Authorize the request and store authorization credentials.
+    def get_authenticated_service():
+        flow = flow_from_clientsecrets(CLIENT_SECRETS_FILE, scope=YOUTUBE_READ_WRITE_SSL_SCOPE,
+                                       message=MISSING_CLIENT_SECRETS_MESSAGE)
 
+        storage = Storage(STORAGE_PATH_FORMAT.format(sys.argv[0]))
+        credentials = storage.get()
 
-def youtube_search(options):
-    service = get_authenticated_service(options)
+        if credentials is None or credentials.invalid:
+            credentials = run_flow(flow, storage)
 
-    # Call the search.list method to retrieve results matching the specified
-    # query term.
-    search_response = service.search().list(
-        q=options.q,
-        part="id,snippet",
-        maxResults=options.max_results,
-        order="viewCount"
-    ).execute()
+        # Trusted testers can download this discovery document from the developers page
+        # and it should be in the same directory with the code.
+        return build(API_SERVICE_NAME, API_VERSION,
+                     http=credentials.authorize(httplib2.Http()))
 
-    videos = []
-    channels = []
-    playlists = []
+    def youtube_search(self, search_term):
+        # Call the search.list method to retrieve results matching the specified
+        # query term.
+        search_response = self.service.search().list(
+            q=search_term,
+            type=SEARCH_TYPE,
+            part=SEARCH_PART,
+            fields=SEARCH_FIELDS,
+            maxResults=SEARCH_MAX_RESULTS
+            #order=SEARCH_ORDER
+        ).execute()
 
-    # Add each result to the appropriate list, and then display the lists of
-    # matching videos, channels, and playlists.
-    for search_result in search_response.get("items", []):
-        if search_result["id"]["kind"] == "youtube#video":
-            videos.append("%s (%s)" % (search_result["snippet"]["title"],
-                                       search_result["id"]["videoId"]))
-        elif search_result["id"]["kind"] == "youtube#channel":
-            channels.append("%s (%s)" % (search_result["snippet"]["title"],
-                                         search_result["id"]["channelId"]))
-        elif search_result["id"]["kind"] == "youtube#playlist":
-            playlists.append("%s (%s)" % (search_result["snippet"]["title"],
-                                          search_result["id"]["playlistId"]))
+        search_videos = []
 
-    print "Videos:\n", "\n".join(videos), "\n"
-    print "Channels:\n", "\n".join(channels), "\n"
-    print "Playlists:\n", "\n".join(playlists), "\n"
+        # Add each result to the appropriate list, and then display the list of
+        # matching videos.
+        for search_result in search_response.get("items", []):
+            search_videos.append(search_result["id"]["videoId"])
+        video_ids = ",".join(search_videos)
+
+        return video_ids
+
+    def get_videos_information(self, video_ids):
+        video_response = self.service.videos().list(
+            id=video_ids,
+            part=VIDEOS_PART,
+            fields=VIDEOS_FIELDS
+        ).execute()
+
+        videos = []
+
+        # Add each result to the list, and then display the list of matching videos.
+        for video_result in video_response.get("items", []):
+            videos.append(VideoInfo(**video_result))
+
+        return videos
+
+    def extract_info_on_video(self, search_term):
+        relevant_video_ids = self.youtube_search(search_term)
+
+        return self.get_videos_information(relevant_video_ids)
+
+    def extract_info_on_all_videos(self, videos_records):
+        for vid_name in videos_records:
+            # Extract videos related to this search term
+            videos_records[vid_name] = self.extract_info_on_video(vid_name)
 
 if __name__ == "__main__":
-    argparser.add_argument("--q", help="Search term", default="Google")
-    argparser.add_argument("--max-results", help="Max results", default=25)
-    args = argparser.parse_args()
-
+    videos_obj = {"lady gaga bad romance": [],
+                  "LP lost on you": [],
+                  "queen don't stop me now": []
+                  }
     try:
-        youtube_search(args)
+        YoutubeExtractor().extract_info_on_all_videos(videos_obj)
+
+        for vid_list in videos_obj.values():
+            for vid in vid_list:
+                print "{0!r} published at {1} with duration of {2}".format(vid.title, vid.publish_date, vid.duration) \
+                    if vid.title is not None and \
+                       vid.publish_date is not None and \
+                       vid.duration is not None \
+                    else "bad result"
+            print "###################"
+
     except HttpError as e:
         print "An HTTP error {0} occurred:\n{1}".format(e.resp.status, e.content)
