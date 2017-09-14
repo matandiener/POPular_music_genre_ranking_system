@@ -105,6 +105,7 @@ class YoutubeExtractor(object):
             videos_records[vid_name] = self.extract_info_on_video(vid_name)
 
 if __name__ == "__main__":
+    # Running example
     videos_obj = {"lady gaga bad romance": [],
                   "LP lost on you": [],
                   "queen don't stop me now": []
@@ -114,11 +115,7 @@ if __name__ == "__main__":
 
         for vid_list in videos_obj.values():
             for vid in vid_list:
-                print "{0!r} published at {1} with duration of {2}".format(vid.title, vid.publish_date, vid.duration) \
-                    if vid.title is not None and \
-                       vid.publish_date is not None and \
-                       vid.duration is not None \
-                    else "bad result"
+                print vid
             print "###################"
 
     except HttpError as e:

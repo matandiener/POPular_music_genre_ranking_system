@@ -31,3 +31,13 @@ class VideoInfo(object):
             self.like_count = None
             self.dislike_count = None
             self.comment_count = None
+
+    def __str__(self):
+        return "{0!r} published at {1} with duration of {2}".format(self.title, self.publish_date, self.duration) \
+                if self.title is not None and \
+                self.publish_date is not None and \
+                self.duration is not None \
+                else "bad youtube result, to ignore"
+
+    def __repr__(self):
+        return self.__str__()
