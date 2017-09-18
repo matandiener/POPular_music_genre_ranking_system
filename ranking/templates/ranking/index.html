@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'ranking/style.css' %}" />
+
+{% if highest_rank_list %}
+    <ul>
+    {% for rank in highest_rank_list %}
+        <li>{{ rank|title }} at {{ rank.ranking_creation_date|date:"D d M Y" }} </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No ranks are currently available. please run the crawling script</p>
+{% endif %}

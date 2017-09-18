@@ -7,3 +7,7 @@ Dependencies:
         google-api-python-client
         billboard.py
         isodate
+        django
+        mysql-python (MySQLdb)
+    other:
+        mysql 5.7
