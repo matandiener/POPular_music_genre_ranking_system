@@ -1,14 +1,25 @@
 # Class that will hold all of the data that comes from the crawling services and be used
 # in the ranking algorithm (each service will update the class with more relevant data)
+BILLBOARD_KEY = "billboard"
+YOUTUBE_KEY = "youtube"
 
 
 class RankingData(object):
+    """
+    songs = dict that contains the songs search in all of the crawling services
+                               the results will be stored in the given dict under the song key and for each
+                               different service relevant data will be saved under the service key.
+                               e.g songs = {"bad romance lady gaga": {"billboard": billboard_song_data,
+                                                                     "youtube": youtube_song_data,}, }
+    albums = same as songs but for albums
+    """
+
     def __init__(self):
-        self.billboard_data = {}
-        self.youtube_data = {}
+        self.songs = {}
+        self.albums = {}
 
     def __str__(self):
-        return "From Billboard: {0}\n" \
-               "From Youtube: {1}".format(self.billboard_data, self.youtube_data)
+        return "Songs data: {0}\n" \
+               "Albums data: {1}\n".format(self.songs, self.albums)
 
 

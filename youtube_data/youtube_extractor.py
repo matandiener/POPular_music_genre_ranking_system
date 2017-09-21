@@ -1,5 +1,6 @@
 import httplib2
 import sys
+import logging
 
 from apiclient.discovery import build
 from apiclient.errors import HttpError
@@ -8,6 +9,7 @@ from oauth2client.file import Storage
 from oauth2client.tools import argparser, run_flow
 
 from VideoInfo import VideoInfo
+from RankingData import YOUTUBE_KEY
 
 # The CLIENT_SECRETS_FILE variable specifies the name of a file that contains
 # the OAuth 2.0 information for this application, including its client_id and
@@ -27,7 +29,6 @@ MISSING_CLIENT_SECRETS_MESSAGE = "WARNING: Please configure OAuth 2.0"
 
 SEARCH_PART = "id"
 SEARCH_FIELDS = "items(id(videoId))"
-#SEARCH_ORDER = "viewCount"
 SEARCH_TYPE = "video"
 SEARCH_MAX_RESULTS = 5
 VIDEOS_PART = "snippet, contentDetails, statistics"
@@ -66,7 +67,6 @@ class YoutubeExtractor(object):
             part=SEARCH_PART,
             fields=SEARCH_FIELDS,
             maxResults=SEARCH_MAX_RESULTS
-            #order=SEARCH_ORDER
         ).execute()
 
         search_videos = []
@@ -100,21 +100,28 @@ class YoutubeExtractor(object):
         return self.get_videos_information(relevant_video_ids)
 
     def extract_info_on_all_videos(self, videos_records):
+        """
+        :param videos_records: dict that contains the songs or albums to search in youtube
+                               the results will be stored in the given dict under the search term key and
+                               will be saved under the youtube key (so that other services can store their info
+                               on this songs under a different key)
+        """
+        logging.info("Getting the data from youtube")
         for vid_name in videos_records:
             # Extract videos related to this search term
-            videos_records[vid_name] = self.extract_info_on_video(vid_name)
+            videos_records[vid_name][YOUTUBE_KEY] = self.extract_info_on_video(vid_name)
 
 if __name__ == "__main__":
     # Running example
-    videos_obj = {"lady gaga bad romance": [],
-                  "LP lost on you": [],
-                  "queen don't stop me now": []
+    videos_obj = {"lady gaga bad romance": {},
+                  "LP lost on you": {},
+                  "queen don't stop me now": {}
                   }
     try:
         YoutubeExtractor().extract_info_on_all_videos(videos_obj)
 
         for vid_list in videos_obj.values():
-            for vid in vid_list:
+            for vid in vid_list[YOUTUBE_KEY]:
                 print vid
             print "###################"
 
