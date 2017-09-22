@@ -42,8 +42,9 @@
                     </caption>
                   <tr>
                     <th class="text-center col-md-1">Rank</th>
-                    <th class="text-center col-md-4">Title</th>
-                    <th class="text-center col-md-4">Artist</th>
+                    <th class="text-center col-md-3">Title</th>
+                    <th class="text-center col-md-3">Artist</th>
+                    <th class="text-center col-md-2">View In Youtube</th>
                     <!--<th class="text-center">Last Update at</th>-->
                   </tr>
                   {% for rank in highest_rank_list %}
@@ -51,7 +52,8 @@
                         <td><b>{{ rank.rank }}</b></td>
                         <td>{{ rank.title|title }}</td>
                         <td>{{ rank.artist|title }}</td>
-                        <!--<td>{{ rank.ranking_creation_date|date:"D d M Y" }}</td>-->
+                        <td><a href="https://www.youtube.com/results?search_query={{ rank.title|escape }} {{  rank.artist|escape }}">
+                            <img src="{% static 'ranking/images/youtube.png' %}" /></a></td>
                     </tr>
                   {% endfor %}
                 </table>

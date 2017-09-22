@@ -24,6 +24,6 @@ class IndexView(generic.ListView):
             q = q.filter(title__icontains=req[TITLE_GET_PARAM]) if req[TITLE_GET_PARAM] else q
         if ARTIST_GET_PARAM in req:
             q = q.filter(artist__icontains=req[ARTIST_GET_PARAM]) if req[ARTIST_GET_PARAM] else q
-        if NUMBER_OF_RESULTS_GET_PARAM in req:
+        if NUMBER_OF_RESULTS_GET_PARAM in req and req[NUMBER_OF_RESULTS_GET_PARAM] > 0:
             return q[:req[NUMBER_OF_RESULTS_GET_PARAM]]
         return q
