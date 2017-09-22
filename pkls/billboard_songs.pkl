@@ -1,0 +1,2011 @@
+(dp0
+S'hot-100'
+p1
+(dp2
+S"It Ain't My Fault Brothers Osborne"
+p3
+(ibillboard
+ChartEntry
+p4
+(dp5
+S'peakPos'
+p6
+I79
+sS'artist'
+p7
+VBrothers Osborne
+p8
+sS'lastPos'
+p9
+I83
+sS'title'
+p10
+VIt Ain't My Fault
+p11
+sS'rank'
+p12
+I94
+sS'weeks'
+p13
+I13
+sbsS'Bad At Love Halsey'
+p14
+(ibillboard
+ChartEntry
+p15
+(dp16
+g6
+I71
+sg7
+VHalsey
+p17
+sg9
+I81
+sg10
+VBad At Love
+p18
+sg12
+I71
+sg13
+I2
+sbsS'Mi Gente J Balvin & Willy William'
+p19
+(ibillboard
+ChartEntry
+p20
+(dp21
+g6
+I19
+sg7
+VJ Balvin & Willy William
+p22
+sg9
+I22
+sg10
+VMi Gente
+p23
+sg12
+I19
+sg13
+I11
+sbsS'Let Me Go Hailee Steinfeld & Alesso Featuring Florida Georgia Line & Watt'
+p24
+(ibillboard
+ChartEntry
+p25
+(dp26
+g6
+I99
+sg7
+VHailee Steinfeld & Alesso Featuring Florida Georgia Line & Watt
+p27
+sg9
+I0
+sg10
+VLet Me Go
+p28
+sg12
+I99
+sg13
+I1
+sbsS'Young Dumb & Broke Khalid'
+p29
+(ibillboard
+ChartEntry
+p30
+(dp31
+g6
+I26
+sg7
+VKhalid
+p32
+sg9
+I33
+sg10
+VYoung Dumb & Broke
+p33
+sg12
+I26
+sg13
+I9
+sbsS'Feel It Still Portugal. The Man'
+p34
+(ibillboard
+ChartEntry
+p35
+(dp36
+g6
+I14
+sg7
+VPortugal. The Man
+p37
+sg9
+I18
+sg10
+VFeel It Still
+p38
+sg12
+I14
+sg13
+I13
+sbsS'Butterfly Effect Travis Scott'
+p39
+(ibillboard
+ChartEntry
+p40
+(dp41
+g6
+I55
+sg7
+VTravis Scott
+p42
+sg9
+I58
+sg10
+VButterfly Effect
+p43
+sg12
+I61
+sg13
+I16
+sbsS"There's Nothing Holdin' Me Back Shawn Mendes"
+p44
+(ibillboard
+ChartEntry
+p45
+(dp46
+g6
+I6
+sg7
+VShawn Mendes
+p47
+sg9
+I10
+sg10
+VThere's Nothing Holdin' Me Back
+p48
+sg12
+I10
+sg13
+I21
+sbsS'Every Little Thing Carly Pearce'
+p49
+(ibillboard
+ChartEntry
+p50
+(dp51
+g6
+I78
+sg7
+VCarly Pearce
+p52
+sg9
+I78
+sg10
+VEvery Little Thing
+p53
+sg12
+I78
+sg13
+I7
+sbsS'Small Town Boy Dustin Lynch'
+p54
+(ibillboard
+ChartEntry
+p55
+(dp56
+g6
+I36
+sg7
+VDustin Lynch
+p57
+sg9
+I41
+sg10
+VSmall Town Boy
+p58
+sg12
+I38
+sg13
+I15
+sbsS'Bank Account 21 Savage'
+p59
+(ibillboard
+ChartEntry
+p60
+(dp61
+g6
+I12
+sg7
+V21 Savage
+p62
+sg9
+I12
+sg10
+VBank Account
+p63
+sg12
+I15
+sg13
+I10
+sbsS'Escapate Conmigo Wisin Featuring Ozuna'
+p64
+(ibillboard
+ChartEntry
+p65
+(dp66
+g6
+I63
+sg7
+VWisin Featuring Ozuna
+p67
+sg9
+I74
+sg10
+VEscapate Conmigo
+p68
+sg12
+I75
+sg13
+I14
+sbsS'Loyalty. Kendrick Lamar Featuring Rihanna'
+p69
+(ibillboard
+ChartEntry
+p70
+(dp71
+g6
+I14
+sg7
+VKendrick Lamar Featuring Rihanna
+p72
+sg9
+I36
+sg10
+VLoyalty.
+p73
+sg12
+I39
+sg13
+I22
+sbsS'New Rules Dua Lipa'
+p74
+(ibillboard
+ChartEntry
+p75
+(dp76
+g6
+I56
+sg7
+VDua Lipa
+p77
+sg9
+I62
+sg10
+VNew Rules
+p78
+sg12
+I56
+sg13
+I7
+sbsS'Too Good At Goodbyes Sam Smith'
+p79
+(ibillboard
+ChartEntry
+p80
+(dp81
+g6
+I5
+sg7
+VSam Smith
+p82
+sg9
+I0
+sg10
+VToo Good At Goodbyes
+p83
+sg12
+I5
+sg13
+I1
+sbsS"It's A Vibe 2 Chainz Featuring Ty Dolla $ign, Trey Songz & Jhene Aiko"
+p84
+(ibillboard
+ChartEntry
+p85
+(dp86
+g6
+I44
+sg7
+V2 Chainz Featuring Ty Dolla $ign, Trey Songz & Jhene Aiko
+p87
+sg9
+I51
+sg10
+VIt's A Vibe
+p88
+sg12
+I60
+sg13
+I14
+sbsS'All The Pretty Girls Kenny Chesney'
+p89
+(ibillboard
+ChartEntry
+p90
+(dp91
+g6
+I66
+sg7
+VKenny Chesney
+p92
+sg9
+I67
+sg10
+VAll The Pretty Girls
+p93
+sg12
+I66
+sg13
+I7
+sbsS'Rake It Up Yo Gotti Featuring Nicki Minaj'
+p94
+(ibillboard
+ChartEntry
+p95
+(dp96
+g6
+I10
+sg7
+VYo Gotti Featuring Nicki Minaj
+p97
+sg9
+I11
+sg10
+VRake It Up
+p98
+sg12
+I16
+sg13
+I11
+sbsS'Love Galore SZA Featuring Travis Scott'
+p99
+(ibillboard
+ChartEntry
+p100
+(dp101
+g6
+I33
+sg7
+VSZA Featuring Travis Scott
+p102
+sg9
+I37
+sg10
+VLove Galore
+p103
+sg12
+I36
+sg13
+I14
+sbsS"That's What I Like Bruno Mars"
+p104
+(ibillboard
+ChartEntry
+p105
+(dp106
+g6
+I1
+sg7
+VBruno Mars
+p107
+sg9
+I17
+sg10
+VThat's What I Like
+p108
+sg12
+I18
+sg13
+I35
+sbsS'Versace On The Floor Bruno Mars'
+p109
+(ibillboard
+ChartEntry
+p110
+(dp111
+g6
+I33
+sg7
+VBruno Mars
+p112
+sg9
+I71
+sg10
+VVersace On The Floor
+p113
+sg12
+I83
+sg13
+I14
+sbsS'Relationship Young Thug Featuring Future'
+p114
+(ibillboard
+ChartEntry
+p115
+(dp116
+g6
+I83
+sg7
+VYoung Thug Featuring Future
+p117
+sg9
+I90
+sg10
+VRelationship
+p118
+sg12
+I88
+sg13
+I4
+sbsS'Unforgettable French Montana Featuring Swae Lee'
+p119
+(ibillboard
+ChartEntry
+p120
+(dp121
+g6
+I3
+sg7
+VFrench Montana Featuring Swae Lee
+p122
+sg9
+I9
+sg10
+VUnforgettable
+p123
+sg12
+I7
+sg13
+I23
+sbsS'Slow Hands Niall Horan'
+p124
+(ibillboard
+ChartEntry
+p125
+(dp126
+g6
+I11
+sg7
+VNiall Horan
+p127
+sg9
+I15
+sg10
+VSlow Hands
+p128
+sg12
+I11
+sg13
+I20
+sbsS'Stay Zedd & Alessia Cara'
+p129
+(ibillboard
+ChartEntry
+p130
+(dp131
+g6
+I7
+sg7
+VZedd & Alessia Cara
+p132
+sg9
+I34
+sg10
+VStay
+p133
+sg12
+I41
+sg13
+I29
+sbsS'Do Re Mi Blackbear'
+p134
+(ibillboard
+ChartEntry
+p135
+(dp136
+g6
+I50
+sg7
+VBlackbear
+p137
+sg9
+I50
+sg10
+VDo Re Mi
+p138
+sg12
+I50
+sg13
+I14
+sbsS'Questions Chris Brown'
+p139
+(ibillboard
+ChartEntry
+p140
+(dp141
+g6
+I89
+sg7
+VChris Brown
+p142
+sg9
+I89
+sg10
+VQuestions
+p143
+sg12
+I89
+sg13
+I3
+sbsS'Love So Soft Kelly Clarkson'
+p144
+(ibillboard
+ChartEntry
+p145
+(dp146
+g6
+I62
+sg7
+VKelly Clarkson
+p147
+sg9
+I0
+sg10
+VLove So Soft
+p148
+sg12
+I62
+sg13
+I1
+sbsS'Jocelyn Flores XXXTentacion'
+p149
+(ibillboard
+ChartEntry
+p150
+(dp151
+g6
+I31
+sg7
+VXXXTentacion
+p152
+sg9
+I38
+sg10
+VJocelyn Flores
+p153
+sg12
+I42
+sg13
+I3
+sbsS'Something Just Like This The Chainsmokers & Coldplay'
+p154
+(ibillboard
+ChartEntry
+p155
+(dp156
+g6
+I3
+sg7
+VThe Chainsmokers & Coldplay
+p157
+sg9
+I25
+sg10
+VSomething Just Like This
+p158
+sg12
+I27
+sg13
+I30
+sbsS'No Complaints Metro Boomin Featuring Offset & Drake'
+p159
+(ibillboard
+ChartEntry
+p160
+(dp161
+g6
+I71
+sg7
+VMetro Boomin Featuring Offset & Drake
+p162
+sg9
+I0
+sg10
+VNo Complaints
+p163
+sg12
+I97
+sg13
+I4
+sbsS'1-800-273-8255 Logic Featuring Alessia Cara & Khalid'
+p164
+(ibillboard
+ChartEntry
+p165
+(dp166
+g6
+I3
+sg7
+VLogic Featuring Alessia Cara & Khalid
+p167
+sg9
+I5
+sg10
+V1-800-273-8255
+p168
+sg12
+I3
+sg13
+I20
+sbsS'Back To You Louis Tomlinson Featuring Bebe Rexha & Digital Farm Animals'
+p169
+(ibillboard
+ChartEntry
+p170
+(dp171
+g6
+I40
+sg7
+VLouis Tomlinson Featuring Bebe Rexha & Digital Farm Animals
+p172
+sg9
+I64
+sg10
+VBack To You
+p173
+sg12
+I72
+sg13
+I8
+sbsS'No Promises Cheat Codes Featuring Demi Lovato'
+p174
+(ibillboard
+ChartEntry
+p175
+(dp176
+g6
+I39
+sg7
+VCheat Codes Featuring Demi Lovato
+p177
+sg9
+I42
+sg10
+VNo Promises
+p178
+sg12
+I45
+sg13
+I18
+sbsS'What Lovers Do Maroon 5 Featuring SZA'
+p179
+(ibillboard
+ChartEntry
+p180
+(dp181
+g6
+I27
+sg7
+VMaroon 5 Featuring SZA
+p182
+sg9
+I27
+sg10
+VWhat Lovers Do
+p183
+sg12
+I29
+sg13
+I3
+sbsS'Feels Calvin Harris Featuring Pharrell Williams, Katy Perry & Big Sean'
+p184
+(ibillboard
+ChartEntry
+p185
+(dp186
+g6
+I20
+sg7
+VCalvin Harris Featuring Pharrell Williams, Katy Perry & Big Sean
+p187
+sg9
+I23
+sg10
+VFeels
+p188
+sg12
+I37
+sg13
+I13
+sbsS"Transportin' Kodak Black"
+p189
+(ibillboard
+ChartEntry
+p190
+(dp191
+g6
+I46
+sg7
+VKodak Black
+p192
+sg9
+I46
+sg10
+VTransportin'
+p193
+sg12
+I58
+sg13
+I4
+sbsS'Felices Los 4 Maluma'
+p194
+(ibillboard
+ChartEntry
+p195
+(dp196
+g6
+I48
+sg7
+VMaluma
+p197
+sg9
+I66
+sg10
+VFelices Los 4
+p198
+sg12
+I70
+sg13
+I18
+sbsS'When It Rains It Pours Luke Combs'
+p199
+(ibillboard
+ChartEntry
+p200
+(dp201
+g6
+I48
+sg7
+VLuke Combs
+p202
+sg9
+I48
+sg10
+VWhen It Rains It Pours
+p203
+sg12
+I49
+sg13
+I7
+sbsS'Pills And Automobiles Chris Brown Featuring Yo Gotti, A Boogie Wit da Hoodie & Kodak Black'
+p204
+(ibillboard
+ChartEntry
+p205
+(dp206
+g6
+I98
+sg7
+VChris Brown Featuring Yo Gotti, A Boogie Wit da Hoodie & Kodak Black
+p207
+sg9
+I0
+sg10
+VPills And Automobiles
+p208
+sg12
+I98
+sg13
+I1
+sbsS'The Weekend SZA'
+p209
+(ibillboard
+ChartEntry
+p210
+(dp211
+g6
+I54
+sg7
+VSZA
+p212
+sg9
+I61
+sg10
+VThe Weekend
+p213
+sg12
+I54
+sg13
+I7
+sbsS'I Get The Bag Gucci Mane Featuring Migos'
+p214
+(ibillboard
+ChartEntry
+p215
+(dp216
+g6
+I24
+sg7
+VGucci Mane Featuring Migos
+p217
+sg9
+I31
+sg10
+VI Get The Bag
+p218
+sg12
+I24
+sg13
+I4
+sbsS'What About Us P!nk'
+p219
+(ibillboard
+ChartEntry
+p220
+(dp221
+g6
+I28
+sg7
+VP!nk
+p222
+sg9
+I32
+sg10
+VWhat About Us
+p223
+sg12
+I30
+sg13
+I6
+sbsS'No Such Thing As A Broken Heart Old Dominion'
+p224
+(ibillboard
+ChartEntry
+p225
+(dp226
+g6
+I46
+sg7
+VOld Dominion
+p227
+sg9
+I59
+sg10
+VNo Such Thing As A Broken Heart
+p228
+sg12
+I68
+sg13
+I16
+sbsS'...Ready For It? Taylor Swift'
+p229
+(ibillboard
+ChartEntry
+p230
+(dp231
+g6
+I4
+sg7
+VTaylor Swift
+p232
+sg9
+I4
+sg10
+V...Ready For It?
+p233
+sg12
+I21
+sg13
+I2
+sbsS'Despacito Luis Fonsi & Daddy Yankee Featuring Justin Bieber'
+p234
+(ibillboard
+ChartEntry
+p235
+(dp236
+g6
+I1
+sg7
+VLuis Fonsi & Daddy Yankee Featuring Justin Bieber
+p237
+sg9
+I3
+sg10
+VDespacito
+p238
+sg12
+I4
+sg13
+I35
+sbsS'Shape Of You Ed Sheeran'
+p239
+(ibillboard
+ChartEntry
+p240
+(dp241
+g6
+I1
+sg7
+VEd Sheeran
+p242
+sg9
+I16
+sg10
+VShape Of You
+p243
+sg12
+I17
+sg13
+I36
+sbsS'Redbone Childish Gambino'
+p244
+(ibillboard
+ChartEntry
+p245
+(dp246
+g6
+I12
+sg7
+VChildish Gambino
+p247
+sg9
+I28
+sg10
+VRedbone
+p248
+sg12
+I31
+sg13
+I41
+sbsS'Heartache On The Dance Floor Jon Pardi'
+p249
+(ibillboard
+ChartEntry
+p250
+(dp251
+g6
+I52
+sg7
+VJon Pardi
+p252
+sg9
+I56
+sg10
+VHeartache On The Dance Floor
+p253
+sg12
+I52
+sg13
+I11
+sbsS'Crew GoldLink Featuring Brent Faiyaz & Shy Glizzy'
+p254
+(ibillboard
+ChartEntry
+p255
+(dp256
+g6
+I51
+sg7
+VGoldLink Featuring Brent Faiyaz & Shy Glizzy
+p257
+sg9
+I52
+sg10
+VCrew
+p258
+sg12
+I51
+sg13
+I12
+sbsS"They Don't Know Jason Aldean"
+p259
+(ibillboard
+ChartEntry
+p260
+(dp261
+g6
+I76
+sg7
+VJason Aldean
+p262
+sg9
+I76
+sg10
+VThey Don't Know
+p263
+sg12
+I77
+sg13
+I7
+sbsS'Silence Marshmello Featuring Khalid'
+p264
+(ibillboard
+ChartEntry
+p265
+(dp266
+g6
+I42
+sg7
+VMarshmello Featuring Khalid
+p267
+sg9
+I54
+sg10
+VSilence
+p268
+sg12
+I59
+sg13
+I5
+sbsS'I Could Use A Love Song Maren Morris'
+p269
+(ibillboard
+ChartEntry
+p270
+(dp271
+g6
+I92
+sg7
+VMaren Morris
+p272
+sg9
+I92
+sg10
+VI Could Use A Love Song
+p273
+sg12
+I95
+sg13
+I4
+sbsS'Attention Charlie Puth'
+p274
+(ibillboard
+ChartEntry
+p275
+(dp276
+g6
+I5
+sg7
+VCharlie Puth
+p277
+sg9
+I7
+sg10
+VAttention
+p278
+sg12
+I8
+sg13
+I21
+sbsS'Gucci Gang Lil Pump'
+p279
+(ibillboard
+ChartEntry
+p280
+(dp281
+g6
+I81
+sg7
+VLil Pump
+p282
+sg9
+I0
+sg10
+VGucci Gang
+p283
+sg12
+I81
+sg13
+I1
+sbsS'Dusk Till Dawn Zayn Featuring Sia'
+p284
+(ibillboard
+ChartEntry
+p285
+(dp286
+g6
+I44
+sg7
+VZayn Featuring Sia
+p287
+sg9
+I0
+sg10
+VDusk Till Dawn
+p288
+sg12
+I44
+sg13
+I1
+sbsS"Drinkin' Problem Midland"
+p289
+(ibillboard
+ChartEntry
+p290
+(dp291
+g6
+I45
+sg7
+VMidland
+p292
+sg9
+I75
+sg10
+VDrinkin' Problem
+p293
+sg12
+I84
+sg13
+I19
+sbsS'Magnolia Playboi Carti'
+p294
+(ibillboard
+ChartEntry
+p295
+(dp296
+g6
+I29
+sg7
+VPlayboi Carti
+p297
+sg9
+I60
+sg10
+VMagnolia
+p298
+sg12
+I63
+sg13
+I20
+sbsS'Found You Kane Brown'
+p299
+(ibillboard
+ChartEntry
+p300
+(dp301
+g6
+I80
+sg7
+VKane Brown
+p302
+sg9
+I0
+sg10
+VFound You
+p303
+sg12
+I80
+sg13
+I1
+sbsS'Body Like A Back Road Sam Hunt'
+p304
+(ibillboard
+ChartEntry
+p305
+(dp306
+g6
+I6
+sg7
+VSam Hunt
+p307
+sg9
+I20
+sg10
+VBody Like A Back Road
+p308
+sg12
+I22
+sg13
+I33
+sbsS'Look What You Made Me Do Taylor Swift'
+p309
+(ibillboard
+ChartEntry
+p310
+(dp311
+g6
+I1
+sg7
+VTaylor Swift
+p312
+sg9
+I1
+sg10
+VLook What You Made Me Do
+p313
+sg12
+I1
+sg13
+I4
+sbsS'Everybody Dies In Their Nightmares XXXTentacion'
+p314
+(ibillboard
+ChartEntry
+p315
+(dp316
+g6
+I54
+sg7
+VXXXTentacion
+p317
+sg9
+I70
+sg10
+VEverybody Dies In Their Nightmares
+p318
+sg12
+I79
+sg13
+I3
+sbsS'Believer Imagine Dragons'
+p319
+(ibillboard
+ChartEntry
+p320
+(dp321
+g6
+I4
+sg7
+VImagine Dragons
+p322
+sg9
+I8
+sg10
+VBeliever
+p323
+sg12
+I9
+sg13
+I32
+sbsS'B.E.D. Jacquees'
+p324
+(ibillboard
+ChartEntry
+p325
+(dp326
+g6
+I69
+sg7
+VJacquees
+p327
+sg9
+I69
+sg10
+VB.E.D.
+p328
+sg12
+I69
+sg13
+I6
+sbsS'Glorious Macklemore Featuring Skylar Grey'
+p329
+(ibillboard
+ChartEntry
+p330
+(dp331
+g6
+I65
+sg7
+VMacklemore Featuring Skylar Grey
+p332
+sg9
+I68
+sg10
+VGlorious
+p333
+sg12
+I65
+sg13
+I10
+sbsS'Light It Up Luke Bryan'
+p334
+(ibillboard
+ChartEntry
+p335
+(dp336
+g6
+I76
+sg7
+VLuke Bryan
+p337
+sg9
+I85
+sg10
+VLight It Up
+p338
+sg12
+I91
+sg13
+I3
+sbsS'Fetish Selena Gomez Featuring Gucci Mane'
+p339
+(ibillboard
+ChartEntry
+p340
+(dp341
+g6
+I27
+sg7
+VSelena Gomez Featuring Gucci Mane
+p342
+sg9
+I65
+sg10
+VFetish
+p343
+sg12
+I74
+sg13
+I10
+sbsS'The Way Life Goes Lil Uzi Vert'
+p344
+(ibillboard
+ChartEntry
+p345
+(dp346
+g6
+I39
+sg7
+VLil Uzi Vert
+p347
+sg9
+I47
+sg10
+VThe Way Life Goes
+p348
+sg12
+I55
+sg13
+I3
+sbsS'Congratulations Post Malone Featuring Quavo'
+p349
+(ibillboard
+ChartEntry
+p350
+(dp351
+g6
+I8
+sg7
+VPost Malone Featuring Quavo
+p352
+sg9
+I24
+sg10
+VCongratulations
+p353
+sg12
+I33
+sg13
+I38
+sbsS'Thunder Imagine Dragons'
+p354
+(ibillboard
+ChartEntry
+p355
+(dp356
+g6
+I40
+sg7
+VImagine Dragons
+p357
+sg9
+I45
+sg10
+VThunder
+p358
+sg12
+I40
+sg13
+I20
+sbsS'No Limit G-Eazy Featuring A$AP Rocky & Cardi B'
+p359
+(ibillboard
+ChartEntry
+p360
+(dp361
+g6
+I85
+sg7
+VG-Eazy Featuring A$AP Rocky & Cardi B
+p362
+sg9
+I0
+sg10
+VNo Limit
+p363
+sg12
+I85
+sg13
+I1
+sbsS'444+222 Lil Uzi Vert'
+p364
+(ibillboard
+ChartEntry
+p365
+(dp366
+g6
+I60
+sg7
+VLil Uzi Vert
+p367
+sg9
+I79
+sg10
+V444+222
+p368
+sg12
+I100
+sg13
+I3
+sbsS'Sauce It Up Lil Uzi Vert'
+p369
+(ibillboard
+ChartEntry
+p370
+(dp371
+g6
+I49
+sg7
+VLil Uzi Vert
+p372
+sg9
+I57
+sg10
+VSauce It Up
+p373
+sg12
+I67
+sg13
+I3
+sbsS'Humble. Kendrick Lamar'
+p374
+(ibillboard
+ChartEntry
+p375
+(dp376
+g6
+I1
+sg7
+VKendrick Lamar
+p377
+sg9
+I21
+sg10
+VHumble.
+p378
+sg12
+I23
+sg13
+I24
+sbsS'Swish Swish Katy Perry Featuring Nicki Minaj'
+p379
+(ibillboard
+ChartEntry
+p380
+(dp381
+g6
+I46
+sg7
+VKaty Perry Featuring Nicki Minaj
+p382
+sg9
+I55
+sg10
+VSwish Swish
+p383
+sg12
+I92
+sg13
+I10
+sbsS'Location Khalid'
+p384
+(ibillboard
+ChartEntry
+p385
+(dp386
+g6
+I16
+sg7
+VKhalid
+p387
+sg9
+I30
+sg10
+VLocation
+p388
+sg12
+I28
+sg13
+I36
+sbsS'Fix A Drink Chris Janson'
+p389
+(ibillboard
+ChartEntry
+p390
+(dp391
+g6
+I95
+sg7
+VChris Janson
+p392
+sg9
+I95
+sg10
+VFix A Drink
+p393
+sg12
+I96
+sg13
+I3
+sbsS'F**k Love XXXTentacion Featuring Trippie Redd'
+p394
+(ibillboard
+ChartEntry
+p395
+(dp396
+g6
+I41
+sg7
+VXXXTentacion Featuring Trippie Redd
+p397
+sg9
+I49
+sg10
+VF**k Love
+p398
+sg12
+I57
+sg13
+I3
+sbsS'Unforgettable Thomas Rhett'
+p399
+(ibillboard
+ChartEntry
+p400
+(dp401
+g6
+I47
+sg7
+VThomas Rhett
+p402
+sg9
+I63
+sg10
+VUnforgettable
+p403
+sg12
+I47
+sg13
+I7
+sbsS"Say You Won't Let Go James Arthur"
+p404
+(ibillboard
+ChartEntry
+p405
+(dp406
+g6
+I11
+sg7
+VJames Arthur
+p407
+sg9
+I39
+sg10
+VSay You Won't Let Go
+p408
+sg12
+I43
+sg13
+I47
+sbsS'Roll In Peace Kodak Black Featuring XXXTENTACION'
+p409
+(ibillboard
+ChartEntry
+p410
+(dp411
+g6
+I53
+sg7
+VKodak Black Featuring XXXTENTACION
+p412
+sg9
+I53
+sg10
+VRoll In Peace
+p413
+sg12
+I53
+sg13
+I4
+sbsS'Sorry Not Sorry Demi Lovato'
+p414
+(ibillboard
+ChartEntry
+p415
+(dp416
+g6
+I13
+sg7
+VDemi Lovato
+p417
+sg9
+I13
+sg10
+VSorry Not Sorry
+p418
+sg12
+I13
+sg13
+I10
+sbsS'What Ifs Kane Brown Featuring Lauren Alaina'
+p419
+(ibillboard
+ChartEntry
+p420
+(dp421
+g6
+I32
+sg7
+VKane Brown Featuring Lauren Alaina
+p422
+sg9
+I40
+sg10
+VWhat Ifs
+p423
+sg12
+I32
+sg13
+I14
+sbsS'Greatest Love Story LANCO'
+p424
+(ibillboard
+ChartEntry
+p425
+(dp426
+g6
+I82
+sg7
+VLANCO
+p427
+sg9
+I86
+sg10
+VGreatest Love Story
+p428
+sg12
+I82
+sg13
+I2
+sbsS'Do I Make You Wanna Billy Currington'
+p429
+(ibillboard
+ChartEntry
+p430
+(dp431
+g6
+I47
+sg7
+VBilly Currington
+p432
+sg9
+I80
+sg10
+VDo I Make You Wanna
+p433
+sg12
+I90
+sg13
+I14
+sbsS"I'm The One DJ Khaled Featuring Justin Bieber, Quavo, Chance The Rapper & Lil Wayne"
+p434
+(ibillboard
+ChartEntry
+p435
+(dp436
+g6
+I1
+sg7
+VDJ Khaled Featuring Justin Bieber, Quavo, Chance The Rapper & Lil Wayne
+p437
+sg9
+I29
+sg10
+VI'm The One
+p438
+sg12
+I35
+sg13
+I20
+sbsS'Whatever You Need Meek Mill Featuring Chris Brown & Ty Dolla $ign'
+p439
+(ibillboard
+ChartEntry
+p440
+(dp441
+g6
+I51
+sg7
+VMeek Mill Featuring Chris Brown & Ty Dolla $ign
+p442
+sg9
+I72
+sg10
+VWhatever You Need
+p443
+sg12
+I76
+sg13
+I10
+sbsS'Havana Camila Cabello Featuring Young Thug'
+p444
+(ibillboard
+ChartEntry
+p445
+(dp446
+g6
+I64
+sg7
+VCamila Cabello Featuring Young Thug
+p447
+sg9
+I73
+sg10
+VHavana
+p448
+sg12
+I64
+sg13
+I5
+sbsS'More Girls Like You Kip Moore'
+p449
+(ibillboard
+ChartEntry
+p450
+(dp451
+g6
+I82
+sg7
+VKip Moore
+p452
+sg9
+I82
+sg10
+VMore Girls Like You
+p453
+sg12
+I86
+sg13
+I5
+sbsS'Friends Justin Bieber + BloodPop'
+p454
+(ibillboard
+ChartEntry
+p455
+(dp456
+g6
+I20
+sg7
+VJustin Bieber + BloodPop
+p457
+sg9
+I35
+sg10
+VFriends
+p458
+sg12
+I34
+sg13
+I4
+sbsS'Bodak Yellow (Money Moves) Cardi B'
+p459
+(ibillboard
+ChartEntry
+p460
+(dp461
+g6
+I2
+sg7
+VCardi B
+p462
+sg9
+I2
+sg10
+VBodak Yellow (Money Moves)
+p463
+sg12
+I2
+sg13
+I11
+sbsS'Wish I Knew You The Revivalists'
+p464
+(ibillboard
+ChartEntry
+p465
+(dp466
+g6
+I84
+sg7
+VThe Revivalists
+p467
+sg9
+I84
+sg10
+VWish I Knew You
+p468
+sg12
+I93
+sg13
+I7
+sbsS'Wild Thoughts DJ Khaled Featuring Rihanna & Bryson Tiller'
+p469
+(ibillboard
+ChartEntry
+p470
+(dp471
+g6
+I2
+sg7
+VDJ Khaled Featuring Rihanna & Bryson Tiller
+p472
+sg9
+I6
+sg10
+VWild Thoughts
+p473
+sg12
+I6
+sg13
+I13
+sbsS'XO TOUR Llif3 Lil Uzi Vert'
+p474
+(ibillboard
+ChartEntry
+p475
+(dp476
+g6
+I7
+sg7
+VLil Uzi Vert
+p477
+sg9
+I19
+sg10
+VXO TOUR Llif3
+p478
+sg12
+I20
+sg13
+I25
+sbsS'Strip That Down Liam Payne Featuring Quavo'
+p479
+(ibillboard
+ChartEntry
+p480
+(dp481
+g6
+I10
+sg7
+VLiam Payne Featuring Quavo
+p482
+sg9
+I14
+sg10
+VStrip That Down
+p483
+sg12
+I12
+sg13
+I17
+sbsS"I'll Name The Dogs Blake Shelton"
+p484
+(ibillboard
+ChartEntry
+p485
+(dp486
+g6
+I73
+sg7
+VBlake Shelton
+p487
+sg9
+I0
+sg10
+VI'll Name The Dogs
+p488
+sg12
+I73
+sg13
+I1
+sbsS'These Heaux Bhad Bhabie'
+p489
+(ibillboard
+ChartEntry
+p490
+(dp491
+g6
+I77
+sg7
+VBhad Bhabie
+p492
+sg9
+I77
+sg10
+VThese Heaux
+p493
+sg12
+I87
+sg13
+I2
+sbsS'Mask Off Future'
+p494
+(ibillboard
+ChartEntry
+p495
+(dp496
+g6
+I5
+sg7
+VFuture
+p497
+sg9
+I43
+sg10
+VMask Off
+p498
+sg12
+I46
+sg13
+I30
+sbsS'The Race Tay-K'
+p499
+(ibillboard
+ChartEntry
+p500
+(dp501
+g6
+I44
+sg7
+VTay-K
+p502
+sg9
+I44
+sg10
+VThe Race
+p503
+sg12
+I48
+sg13
+I6
+sbsS'Praying Kesha'
+p504
+(ibillboard
+ChartEntry
+p505
+(dp506
+g6
+I22
+sg7
+VKesha
+p507
+sg9
+I26
+sg10
+VPraying
+p508
+sg12
+I25
+sg13
+I10
+sbss.
