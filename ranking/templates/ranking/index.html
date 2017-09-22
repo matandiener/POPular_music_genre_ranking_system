@@ -1,13 +1,91 @@
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>POPular ranking</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'ranking/bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'ranking/style.css' %}" />
 
-<link rel="stylesheet" type="text/css" href="{% static 'ranking/style.css' %}" />
+    </head>
+    <body>
+        {% if highest_rank_list %}
+            <div class="col-md-offset-1 col-md-10">
+                <table class="table table-stripped table-bordered text-center center">
+                    <caption class="text-center"><h1><b>POPular Ranking</b></h1></caption>
+                    <caption class="text-center">
+                        Last updated: {{ highest_rank_list.0.ranking_creation_date }}</caption>
+                    <caption class="text-center">
+                        <form id="filter_form" action={% url 'index' %} method="get">
+                            <div class="form-group row">
+                                <label for="title_q" class="col-md-offset-1 col-md-4 col-form-label">Title includes: </label>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="title_q" type="text" name="title_q">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="artist_q" class="col-md-offset-1 col-md-4 col-form-label">Artist includes: </label>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="artist_q" type="text" name="artist_q">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="num_of_results" class="col-md-offset-1 col-md-4 col-form-label">Number of results to show: </label>
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" name="num_of_results" id="num_of_results"
+                                                                  value={{ highest_rank_list|length }}>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <input class="btn btn-primary" type="submit" value="Filter Results">
+                            </div>
+                        </form>
+                    </caption>
+                  <tr>
+                    <th class="text-center col-md-1">Rank</th>
+                    <th class="text-center col-md-4">Title</th>
+                    <th class="text-center col-md-4">Artist</th>
+                    <!--<th class="text-center">Last Update at</th>-->
+                  </tr>
+                  {% for rank in highest_rank_list %}
+                    <tr>
+                        <td><b>{{ rank.rank }}</b></td>
+                        <td>{{ rank.title|title }}</td>
+                        <td>{{ rank.artist|title }}</td>
+                        <!--<td>{{ rank.ranking_creation_date|date:"D d M Y" }}</td>-->
+                    </tr>
+                  {% endfor %}
+                </table>
+            </div>
+        {% else %}
+        <p>No ranks are available.</p>
+        <p>remove any filters from the url.</p>
+        <p>In case of empty DB, contact the administrators in order for them to run the crawling script.</p>
+        {% endif %}
+    </body>
 
-{% if highest_rank_list %}
-    <ul>
-    {% for rank in highest_rank_list %}
-        <li>{{ rank|title }} at {{ rank.ranking_creation_date|date:"D d M Y" }} </li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No ranks are currently available. please run the crawling script</p>
-{% endif %}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+       function ignoreEmptyInputs() {
+           $('#filter_form').submit(function () {
+                $(this)
+                    .find('input[name]')
+                    .filter(function () {
+                        return !this.value;
+                    })
+                    .prop('name', '');
+            });
+        }
+
+        function populateInputsFromUrl() {
+            (new URL(window.location.href)).searchParams.forEach((x, y) =>
+                document.getElementById(y).value = x)
+        }
+
+        populateInputsFromUrl()
+        ignoreEmptyInputs()
+    </script>
+    <!-- Include all compiled plugins (below), or include individual files as needed
+    <script src="js/bootstrap.min.js"></script>
+    -->
+</html>

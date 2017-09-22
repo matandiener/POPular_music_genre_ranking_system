@@ -1,3 +1,12 @@
-li {
-    color: green;
+body {
+    font-size: x-large;
+}
+
+h1 {
+    background-color: pink;
+    color: black;
+}
+
+#num_of_results {
+    text-align: center;
 }
