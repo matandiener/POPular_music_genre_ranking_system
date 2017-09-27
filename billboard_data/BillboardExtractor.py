@@ -3,7 +3,6 @@ import logging
 from billboard import ChartData, BillboardParseException
 
 RELEVANT_SONGS_CHARTS_NAMES = ["hot-100"]
-RELEVANT_ALBUMS_CHARTS_NAMES = ["billboard-200"]
 
 
 def get_chart_songs(chart_name):

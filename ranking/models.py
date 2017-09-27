@@ -20,5 +20,5 @@ class Ranks(models.Model):
     class Meta:
         verbose_name = "Rank"
         verbose_name_plural = "Ranks"
-        ordering = ['rank']
+        ordering = ['-rank']
         unique_together = ("title", "artist")

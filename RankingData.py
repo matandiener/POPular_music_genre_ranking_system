@@ -11,15 +11,12 @@ class RankingData(object):
                                different service relevant data will be saved under the service key.
                                e.g songs = {"bad romance lady gaga": {"billboard": billboard_song_data,
                                                                      "youtube": youtube_song_data,}, }
-    albums = same as songs but for albums
     """
 
     def __init__(self):
         self.songs = {}
-        self.albums = {}
 
     def __str__(self):
-        return "Songs data: {0}\n" \
-               "Albums data: {1}\n".format(self.songs, self.albums)
+        return "Songs data: {0}\n".format(self.songs)
 
 

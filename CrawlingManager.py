@@ -12,14 +12,14 @@ from ranking.models import Ranks
 from RankingData import RankingData, YOUTUBE_KEY, BILLBOARD_KEY
 from youtube_data.youtube_extractor import YoutubeExtractor, HttpError
 from billboard_data.BillboardExtractor import BillboardParseException, get_all_charts_items,\
-    RELEVANT_SONGS_CHARTS_NAMES, RELEVANT_ALBUMS_CHARTS_NAMES
+    RELEVANT_SONGS_CHARTS_NAMES
+from ranking_algorithm.ranking_algorithm import rank_songs, POPULAR_RANK_KEY
 
 
 # Class that will call all of the project crawling services and will pass the
 # result to the ranking algorithm using the RankingData object
 class CrawlingManager(object):
     SONGS_TYPE = "songs"
-    ALBUMS_TYPE = "albums"
 
     def __init__(self):
         self.ranking_data = RankingData()
@@ -29,23 +29,21 @@ class CrawlingManager(object):
 
         # Get data from Billboard
         billboard_songs_data = get_all_charts_items(RELEVANT_SONGS_CHARTS_NAMES)
-        billboard_albums_data = get_all_charts_items(RELEVANT_ALBUMS_CHARTS_NAMES)
 
         # Prepare to get data from youtube
         self.prepare_data_for_extraction(billboard_songs_data, CrawlingManager.SONGS_TYPE)
-        self.prepare_data_for_extraction(billboard_albums_data, CrawlingManager.ALBUMS_TYPE)
 
         try:
             # The extractor updates the youtube_data
             youtube_extractor = YoutubeExtractor()
             youtube_extractor.extract_info_on_all_videos(self.ranking_data.songs)
-            youtube_extractor.extract_info_on_all_videos(self.ranking_data.albums)
         except HttpError as ex:
             logging.error("Network error when connecting to youtube\ndetails: {0}\n"
                           "skipping on youtube extraction".format(e))
 
         # Call the ranking algorithm with ranking_data (should handle both songs and albums)
-        logging.info("Rank all of the songs and albums according to our algorithm")
+        logging.info("Rank all of the songs according to our algorithm")
+        rank_songs(self.ranking_data.songs)
 
         # Save the results to the DB to be viewed in the website later
         self.save_results()
@@ -76,12 +74,7 @@ class CrawlingManager(object):
             Ranks.objects.create(title=self.ranking_data.songs[song][BILLBOARD_KEY].title,
                                  artist=self.ranking_data.songs[song][BILLBOARD_KEY].artist,
                                  ranking_creation_date=timezone.now(),
-                                 rank=self.ranking_data.songs[song][BILLBOARD_KEY].rank)
-            # when ranking algorithm code is ready it will put the calculated ranking under the
-            # 'rank' key so ->
-            # rank=self.ranking_data.songs[song]['rank'])
-
-        # Save the albums results after deciding how to deal with them
+                                 rank=self.ranking_data.songs[song][POPULAR_RANK_KEY])
 
         logging.info("Finished saving the results to the DB")
 
