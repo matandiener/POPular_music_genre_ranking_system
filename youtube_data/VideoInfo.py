@@ -4,6 +4,11 @@ from isodate import parse_duration
 
 class VideoInfo(object):
     def __init__(self, **kargs):
+        if "id" in kargs:
+            self.id = kargs["id"]
+        else:
+            self.id = None
+
         if "snippet" in kargs:
             self.title = kargs["snippet"]["title"] if "title" in kargs["snippet"] else None
             self.description = kargs["snippet"]["description"] if "description" in kargs["snippet"] else None
@@ -33,8 +38,10 @@ class VideoInfo(object):
             self.comment_count = None
 
     def __str__(self):
-        return "{0!r} published at {1} with duration of {2}".format(self.title, self.publish_date, self.duration) \
+        return "{0!r} with id {1} published at {2} with duration of {3}".format(self.title, self.id,
+                                                                                self.publish_date, self.duration) \
                 if self.title is not None and \
+                self.id is not None and \
                 self.publish_date is not None and \
                 self.duration is not None \
                 else "bad youtube result, to ignore"

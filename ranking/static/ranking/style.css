@@ -15,7 +15,7 @@ img {
     padding: 0;
     display: block;
     margin: 0 auto;
-    max-height: 30%;
-    max-width: 30%;
+    max-height: 100%;
+    max-width: 100%;
     margin-top: -10px;
 }

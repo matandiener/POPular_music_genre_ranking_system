@@ -10,7 +10,9 @@ class Ranks(models.Model):
     title = models.CharField(max_length=200)
     artist = models.CharField(max_length=200)
     ranking_creation_date = models.DateTimeField('date created')
-    rank = models.IntegerField(default=0)
+    rank = models.FloatField(default=0.0)
+    billboard_current_rank = models.IntegerField(default=0)
+    most_related_youtube_vid_id = models.CharField(max_length=200)
 
     def __str__(self):
         return "{0} by {1} with rank: {2}".format(self.title,

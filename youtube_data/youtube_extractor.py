@@ -31,8 +31,8 @@ SEARCH_PART = "id"
 SEARCH_FIELDS = "items(id(videoId))"
 SEARCH_TYPE = "video"
 SEARCH_MAX_RESULTS = 5
-VIDEOS_PART = "snippet, contentDetails, statistics"
-VIDEOS_FIELDS = "items(snippet(publishedAt, title, description)," \
+VIDEOS_PART = "id, snippet, contentDetails, statistics"
+VIDEOS_FIELDS = "items(id, snippet(publishedAt, title, description)," \
                       "contentDetails(duration)," \
                       "statistics(viewCount, likeCount, dislikeCount, commentCount))"
 

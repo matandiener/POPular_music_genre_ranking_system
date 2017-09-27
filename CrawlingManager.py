@@ -74,7 +74,9 @@ class CrawlingManager(object):
             Ranks.objects.create(title=self.ranking_data.songs[song][BILLBOARD_KEY].title,
                                  artist=self.ranking_data.songs[song][BILLBOARD_KEY].artist,
                                  ranking_creation_date=timezone.now(),
-                                 rank=self.ranking_data.songs[song][POPULAR_RANK_KEY])
+                                 rank=self.ranking_data.songs[song][POPULAR_RANK_KEY],
+                                 billboard_current_rank=self.ranking_data.songs[song][BILLBOARD_KEY].rank,
+                                 most_related_youtube_vid_id=self.ranking_data.songs[song][YOUTUBE_KEY][0].id)
 
         logging.info("Finished saving the results to the DB")
 
